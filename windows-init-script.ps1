@@ -21,24 +21,16 @@ try {
 
     Write-Host "Installing JDK 17..."
     choco install -y temurin17
-    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-    java --version
 
     Write-Host "Installing Git..."
     choco install -y git
-    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-    git --version
     git config --system --unset credential.helper
 
     Write-Host "Installing Python..."
     choco install -y python
-    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-    python --version
 
     Write-Host "Installing GitHub CLI..."
     choco install -y gh
-    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-    gh --version
 
     Write-Host "Enabling RSAT..."
     Enable-WindowsOptionalFeature -Online -All -FeatureName ActiveDirectory-PowerShell
