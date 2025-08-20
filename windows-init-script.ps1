@@ -26,8 +26,9 @@ try {
 
     Write-Host "Installing Git..."
     choco install -y git
-    git config --system --unset credential.helper
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
     git --version
+    git config --system --unset credential.helper
 
     Write-Host "Installing Python..."
     choco install -y python
