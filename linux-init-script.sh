@@ -2,7 +2,7 @@
 # Linux (Ubuntu) VM Init Script for CI/CD Agent Setup
 # Installs software tooling non-interactively
 
-set -e  # Exit immediately if a command exits with a non-zero status
+#set -e  # Exit immediately if a command exits with a non-zero status
 export DEBIAN_FRONTEND=noninteractive  # Ensure apt runs non-interactively
 
 # Update and upgrade packages
