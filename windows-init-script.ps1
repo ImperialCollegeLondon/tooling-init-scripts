@@ -24,7 +24,6 @@ try {
 
     Write-Host "Installing Git..."
     choco install -y git
-    git config --system --unset credential.helper
 
     Write-Host "Installing Python..."
     choco install -y python
