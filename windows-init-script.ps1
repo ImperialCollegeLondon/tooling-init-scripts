@@ -1,6 +1,14 @@
 # Windows Server VM Init Script for CI/CD Agent Setup
 # Installs required tools non-interactively with error handling and logging
 
+# Ensure TEMP directory exists for systemprofile.
+$sysTemp = "C:\Windows\System32\config\systemprofile\AppData\Local\Temp"
+if (-Not (Test-Path -Path $sysTemp)) {
+    New-Item -Path $sysTemp -ItemType Directory -Force | Out-Null
+}
+$env:TEMP = $sysTemp
+$env:TMP = $sysTemp
+
 try {
     Write-Host "Setting timezone..."
     Set-TimeZone -Name 'GMT Standard Time'
